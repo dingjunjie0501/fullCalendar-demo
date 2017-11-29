@@ -7,70 +7,115 @@
 	<link href='./fullcalendar.print.min.css' rel='stylesheet' media='print' />
 	<script src='./moment.min.js'></script>
 	<script src='./jquery.min.js'></script>
-	<script src='./fullcalendar.min.js'></script>
-	<script src='./fullcalendar.min.js'></script>
+	<script src='./fullcalendar.js'></script>
+	<script src='./zh-cn.js'></script>
 	<script>
 		$(document).ready(function () {
 
 			$('#calendar').fullCalendar({
-				defaultDate: '2017-11-12',
-				editable: true,
-				eventLimit: true, // allow "more" link when too many events
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay,listMonth'
+				},
+				defaultView: 'month',
+				navLinks: true, // can click day/week names to navigate views
+				// defaultDate: '2017-11-12',
+				editable: false, // 是否允许事件可以被编辑，值为布尔类型。editable 决定了日程是否可以被调整和拖拽，这个过程会同时调整开始和结束时间
+				eventLimit: true, // 限制显示在一天的事件数。值可以为布尔型和数字整型，默认false。当事件太多时，会显示一个看起来像“+ 2更多”的链接
 				events: [{
 						title: 'All Day Event',
-						start: '2017-11-01'
+						start: '2017-11-01',
+						description: 'This is a cool event'
 					},
 					{
 						title: 'Long Event',
 						start: '2017-11-07',
-						end: '2017-11-10'
+						end: '2017-11-10',
+						url: 'http://baidu.com/'
 					},
 					{
 						id: 999,
 						title: 'Repeating Event',
-						start: '2017-11-09T16:00:00'
+						start: '2017-11-09T16:00:00',
+						url: 'http://baidu.com/'
 					},
 					{
 						id: 999,
 						title: 'Repeating Event',
-						start: '2017-11-16T16:00:00'
+						start: '2017-11-16T16:00:00',
+						url: 'http://baidu.com/'
 					},
 					{
 						title: 'Conference',
 						start: '2017-11-11',
-						end: '2017-11-13'
+						end: '2017-11-13',
+						url: 'http://baidu.com/'
 					},
 					{
 						title: 'Meeting',
 						start: '2017-11-12T10:30:00',
-						end: '2017-11-12T12:30:00'
+						end: '2017-11-12T12:30:00',
+						url: 'http://baidu.com/',
+						color: '#257e4a'
+					},
+					{
+						title: 'Meeting2',
+						start: '2017-11-12T10:30:00',
+						end: '2017-11-12T12:30:00',
+						url: 'http://baidu.com/',
+						color: '#257e4a'
 					},
 					{
 						title: 'Lunch',
-						start: '2017-11-12T12:00:00'
+						start: '2017-11-12T12:00:00',
+						url: 'http://baidu.com/'
+					},
+					{
+						title: 'Lunch1',
+						start: '2017-11-12T12:00:00',
+						url: 'http://baidu.com/'
+					},
+					{
+						title: 'Lunch2',
+						start: '2017-11-12T12:00:00',
+						url: 'http://baidu.com/'
+					},
+					{
+						title: 'Lunch3',
+						start: '2017-11-12T12:00:00',
+						url: 'http://baidu.com/'
 					},
 					{
 						title: 'Meeting',
-						start: '2017-11-12T14:30:00'
+						start: '2017-11-12T14:30:00',
+						url: 'http://baidu.com/'
 					},
 					{
 						title: 'Happy Hour',
-						start: '2017-11-12T17:30:00'
+						start: '2017-11-12T17:30:00',
+						url: 'http://baidu.com/'
 					},
 					{
 						title: 'Dinner',
-						start: '2017-11-12T20:00:00'
+						start: '2017-11-12T20:00:00',
+						url: 'http://baidu.com/'
 					},
 					{
 						title: 'Birthday Party',
-						start: '2017-11-13T07:00:00'
+						start: '2017-11-13T07:00:00',
+						url: 'http://baidu.com/'
 					},
 					{
-						title: 'Click for Google',
-						url: 'http://google.com/',
+						title: 'Click for Baidu',
+						url: 'http://baidu.com/',
 						start: '2017-11-28'
 					}
-				]
+				],
+				eventColor: '#3a87ad', // 设置所有日程事件的背景色和边框颜色
+				eventBackgroundColor: '#3a87ad', // 设置日程事件的背景色
+				eventBorderColor: '#3a87ad' // 设置日程事件的边框颜色
+
 			});
 
 		});
